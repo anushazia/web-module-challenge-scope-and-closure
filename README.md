@@ -43,6 +43,11 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+When functions look outside themselves to figure out where a variable is defined, it searches in the outer or global scope. This is what closre is.
+If it doesn't see a variable defiend inside the function scope it will look up the scope chain for reference.
+
+
 2. Study the following code, then answer the questions below.
 
 ```js
