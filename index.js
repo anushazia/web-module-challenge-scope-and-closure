@@ -100,9 +100,6 @@ return {//returning object with keys of home and value
   "Away": Away
 }
 }
-
-
-
 finalScore(inning, 9)//both the arguments need to be met
 
 
@@ -112,8 +109,11 @@ Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore(inning) {
+  return {
+    "Home":inning(),
+    "Away":inning()
+  }
 }
 
 
