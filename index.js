@@ -29,10 +29,15 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   
   1. What is the difference between counter1 and counter2?
   
+  The counter2 is global or public variable, where as counter1 is scoped to the block, it is private variable.
+  
   2. Which of the two uses a closure? How can you tell?
+  
+  counter1 uses the closure because it has to look outside of the function scope for the variable and because it returns a function.
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+     counter1 would be preferable if you will likely use that fucntion agian, it would be useful to remain in the global scope, but if
 */
 
 // counter1 code
@@ -62,10 +67,10 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+  return Math.floor(Math.random() * 3);
 }
-
+inning();
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
@@ -81,9 +86,26 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
-  /*Code Here*/
+function finalScore(inning, numberOfInnings){ //take in the callback function generating random numbr and number of innings (any number)
+let Home = 0; //we start with a tracker
+let Away = 0;
+for(let i = 0; i <= numberOfInnings; i++){ // we need a for loop to add to the score, as long as i is less than OR equal to numberofInnings, each time the loop runs we add 1 to the counter
+  let teamHome = inning() * i;//we generate the random number using our call back and multiply by i (which is our counter) score increases
+  let teamAway = inning() * i;
+  Home += teamHome;
+  Away += teamAway;
 }
+return {//returning object with keys of home and value
+  "Home": Home,
+  "Away": Away
+}
+}
+
+
+
+finalScore(inning, 9)//both the arguments need to be met
+
+
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
@@ -136,7 +158,7 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
+function scoreboard(getInningScore, inning, numOfInningsToBePlayed) {
   /* CODE HERE */
 }
 
