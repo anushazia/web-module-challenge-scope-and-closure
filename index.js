@@ -158,9 +158,34 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(getInningScore, inning, inningsToBePlayed) {
-  /* CODE HERE */
+function scoreboard(getInningScore, inning, inningsToBePlayed) {//Receive the callback function `getInningScore` from Task 4 Receive the callback function `inning` from Task 2, Receive a number of innings to be played//
+  let scoreArray = [];// Return an array where each of it's index values equals a string stating the Home and Away team's scores for each inning.  Not the cummulative score.
+  let homeScore = 0;//start the tracker for the homeTeam at 0
+  let awayScore = 0;//start the tracker for the awayTeam at 0
+  let homeFinal = 0;//start the tracker for the home total score at 0
+  let awayFinal = 0;//start the tracker for the away total score at 0
+  for (let i = 0; i <= inningsToBePlayed; i++){//make a for loop that starts at 0 and will be less than and equal to number of inningsToBePlayed
+    homeScore = inning();//pass in the inning function from task 2 to homeScore and awayScore
+    awayScore = inning();
+    scoreArray.push( //push to a the scoreArray that returns string stating the home and away teams scores.
+      `Inning ${i+1}: Away ${awayScore} - Home ${homeScore}`//Return an array where each of it's index values equals a string stating the Home and Away team's scores for each inning.
+    );
+    homeFinal = homeFinal + homeScore;// add the total score: homeFinal to the homeScore.
+    awayFinal = awayFinal + awayScore;// add the total score: awayFinal to the awayScore.
+
+  }
+  if (homeFinal === awayFinal) {//make an if statment that prints the string if the score is a tie.
+    scoreArray.push(`This game with require extra innings: Away ${awayFinal} - Home ${homeFinal}`);
+    return scoreArray;//return the scoreArray
+  } else {//else push the final score to the scoreArray
+    scoreArray.push(`Final Score: Away ${awayFinal} - Home ${homeFinal}`);
+    return scoreArray;
+  }
 }
+console.log(scoreboard(getInningScore,inning, 2));//console.log the scoreboard() with the number of innings, try different numbers
+console.log(scoreboard(getInningScore,inning, 6));
+console.log(scoreboard(getInningScore,inning, 8));
+console.log(scoreboard(getInningScore,inning, 4));
 
 
 
