@@ -158,7 +158,7 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(getInningScore, inning, numOfInningsToBePlayed) {
+function scoreboard(getInningScore, inning, inningsToBePlayed) {
   /* CODE HERE */
 }
 

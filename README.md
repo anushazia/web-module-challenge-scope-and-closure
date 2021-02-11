@@ -69,9 +69,14 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
-b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
+Its the 2nd function which generates the random number, I can tell because it has a return statment as well.
 
+b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+The same thing in 'dansRoll' in the function to have a number randomly generated, what could be changed is the 
+
+
+c. What is the lexical scope of `newRoll`? 
+The lexical scope of 'newRoll'on line 57
 
 ### Task 3 - Stretch Goals
 
